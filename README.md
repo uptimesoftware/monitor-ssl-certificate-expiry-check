@@ -7,13 +7,13 @@ See http://uptimesoftware.github.io for more information.
 
 ### Category
 
-{ page.category }}
+plugin
 
 ### Version Compatibility
 
 
   
-    * SSL Certificate Expiry Check - 7.1, 7.0, 6.0, 5.5, 5.4, 5.3, 5.2
+* SSL Certificate Expiry Check - 7.1, 7.0, 6.0, 5.5, 5.4, 5.3, 5.2
   
 
 
@@ -46,8 +46,11 @@ extension=php_curl.dll</p>
 
 ### Output Variables
 
+
 * days remaining to expiry
 
+
 ### Languages Used
+
 * PHP
 
