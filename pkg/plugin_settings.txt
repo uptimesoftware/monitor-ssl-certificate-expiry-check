@@ -1,8 +1,0 @@
-name=SSL Certificate Expiry Monitor
-version=2.0
-platforms=windows linux solaris
-description=Monitor how long before HTTPS (SSL) certificate(s) will expiry.
-restartCore=false
-requiresAgentScript=false
-onUpgradeRemoveFiles=true
-onUpgradeRemoveMonitors=false

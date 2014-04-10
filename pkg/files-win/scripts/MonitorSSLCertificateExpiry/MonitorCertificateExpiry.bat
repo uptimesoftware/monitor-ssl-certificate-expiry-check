@@ -1,2 +1,2 @@
 @echo off
-"..\..\apache\php\php.exe" "MonitorCertificateExpiry.php" %1 %2
+"..\..\apache\php\php.exe" "..\..\plugins\scripts\MonitorSSLCertificateExpiry\MonitorCertificateExpiry.php" %1 %2
