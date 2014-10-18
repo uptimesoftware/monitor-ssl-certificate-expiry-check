@@ -54,7 +54,7 @@
 		curl_setopt($Channel, CURLOPT_SSL_VERIFYHOST, 2);
 		
 		// Set SSL version
-		curl_setopt($Channel, CURLOPT_SSLVERSION, 3);		
+		curl_setopt($Channel, CURLOPT_SSLVERSION, 0);		
  
 		// Execute CURL command
 		curl_exec($Channel);
