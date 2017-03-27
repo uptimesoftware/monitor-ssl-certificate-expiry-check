@@ -8,17 +8,15 @@
 	 */
 	 
 	 //copySecureFile("http://localhost:9999/","c:\\temp");
-	 
 	
 	$statusURL = $argv[2];
 	
+	// get curl version information
+	//$version = curl_version();
+	//echo $version[version];
+
 	function copySecureFile($FromLocation,$ToLocation,$VerifyPeer,$VerifyHost,$fileName)
 	{
-		
-		
-		
-		
-		
 		$error_FH = fopen($fileName,"w");
 		
 		//$error_FH;
@@ -37,7 +35,7 @@
  		//CURLOPT_VERBOSE
  		
  		
- 		
+ 		curl_setopt($Channel, CURLOPT_RETURNTRANSFER, true);
  		
 		// We are not sending any headers
 		curl_setopt($Channel, CURLOPT_VERBOSE, 1);
@@ -126,7 +124,9 @@ while(true)
 
 	// Look for "expire date"
 	if(stristr($line, 'expire date' ) != FALSE) {
-		$expiryDate	= date('Y-m-d H:i:s T', strtotime(substr($line, 17)));
+		//for debugging date issues
+		//$RAWexpiryDate = ($line);
+		$expiryDate	= date('Y-m-d H:i:s T', strtotime(substr($line, 16)));
 		$expiryFound = true;
 	}
 	// Look for "error"
@@ -143,6 +143,11 @@ fclose($fh);
 // Output the number of days left in the expiry date
 if ($expiryFound) {
 	$curDate	= date('Y-m-d H:i:s T', strtotime("now"));
+	/* for debugging date issues
+		echo "current date is: ".$curDate."\r\n";
+		echo "RAW cert expiry date is: ".$RAWexpiryDate."\r\n";
+		echo "reformatted cert expiry date is: ".$expiryDate."\r\n";
+		*/
 	echo "expirydays " . dateDiffInDays($expiryDate, $curDate) . "\n";
 }
 else {
